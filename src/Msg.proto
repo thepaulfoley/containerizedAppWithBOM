@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package containerizedapp;
+
+message ping 
+{
+   required int32 rank = 1;
+}
