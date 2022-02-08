@@ -8,4 +8,10 @@ if (${Protobuf_FOUND})
   include_directories (${Protobuf_INCLUDE_DIRS})
 endif ()
 
+find_package (MPI 3.1 REQUIRED)
+if (${MPI_FOUND})
+  message(STATUS "Found MPI includes in ${MPI_CXX_INCLUDE_DIRS} " )
+  include_directories (${MPI_CXX_INCLUDE_DIRS})
+endif ()
+
 add_subdirectory(src)

@@ -13,5 +13,6 @@ target_include_directories(main
 
 target_link_libraries(main 
   PRIVATE ${Protobuf_LIBRARIES}
+  PRIVATE MPI::MPI_CXX
 )
 
