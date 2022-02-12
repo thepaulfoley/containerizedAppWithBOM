@@ -1,0 +1,8 @@
+# syntax=docker/dockerfile:1
+FROM thepaulfoley/ubuntu_and_simple_bom
+#Create a new user called test_user
+RUN useradd -ms /bin/bash test_user
+#switch to test_user and set the working directory to be the test_user home directory
+USER test_user
+WORKDIR /home/test_user
+ENV USER_ADDED=test_user 

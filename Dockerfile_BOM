@@ -13,6 +13,4 @@ RUN apt-get update && \
   protobuf-compiler \
   libopenmpi-dev \
   build-essential
-#Copy our application into the container
-WORKDIR /containerizedAppWithBOM
-COPY . .
+

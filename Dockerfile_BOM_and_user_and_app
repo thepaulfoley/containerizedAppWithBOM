@@ -1,0 +1,14 @@
+# syntax=docker/dockerfile:1
+FROM thepaulfoley/simple_bom_and_user
+
+#Copy our application into the container
+RUN mkdir ~/containerizedAppWithBOM
+WORKDIR /home/$USER_ADDED/containerizedAppWithBOM
+COPY --chown=test_user:test_user . .
+RUN rm -rf build
+RUN cmake -S. -Bbuild
+RUN cmake --build build
+#Need to give the relative path to the executable because commands in a docker execuute in the WORKDIR.
+#Would need to  change the WORKDIRECT to not specify a path. NOTE: RUN cd <path/to/change/to> does absolutely nothing
+#in aa dockerfile 
+CMD mpirun -np 4 --allow-run-as-root build/src/main
