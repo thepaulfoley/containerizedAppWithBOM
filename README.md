@@ -1,7 +1,6 @@
 # containerizedAppWithBOM
 Simple C++ application demonstrating containerizing an application needing a BOM consisting of several different tools. The application will make use of the following software as part of its BOM:
 - MPI
-- log4cxx
 - Google protocol buffers
 
 ## Description
